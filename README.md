@@ -1,1 +1,8 @@
 # DATA-EXTRACTION-ANALYSIS-ON-ENGLISH-PREMIER-LEAGUE
+
+Data Extraction using Beautiful Soup and Dataset Creation:
+
+The “FBRef” website contains a lot of information regarding football matches for several leagues. Since the scope of this project is to analyse the match and team statistics for the past few years in the EPL, the URL specific to this league is chosen to start the scrapping. 
+The regular season section on the FBRef EPL homepage(Premier League Stats, 2022) contains information about the current season, more importantly, the inspected section in Fig.3.1 contains the team standings data. In this section each team link points to its own elaborated page for the selected season, these pages contain per-match statistics for the teams. In this section, the “Scores & Fixtures” table contains some basic information about the match, and the “Shooting” section contains advanced statistics about offence and defence.
+However, this data is for the teams in EPL for a period of only one year, corresponding to one season. Therefore, to extract the data for multiple years the “Previous Season” button on the EPL home page can be used to traverse through all the previous seasons. Once the previous season page is accessed the whole process of visiting teams and extracting information can be repeated because the HTML layout for all the seasons is consistent. 
+The base URL that is used to start the scrapping is https://fbref.com/en/comps/9/Premier- League-Stats , using this link all the other links can be accessed. The year python list can be used to loop the extraction process. Then, a Beautiful Soup object is created to easily access the contents of the HTML. 
